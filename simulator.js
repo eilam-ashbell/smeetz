@@ -109,7 +109,7 @@ function firstCalc() {
             plan.pilotY = calcYearly(pFeesEur),
             plan.astronautY = calcYearly(aFeesEur);
     }
-    if (true == feeCheckBox.checked) {
+    if (false == feeCheckBox.checked) {
         plan.explorerM = (plan.explorerM + a),
             plan.pilotM = (plan.pilotM + a),
             plan.astronautM = (plan.astronautM + a),
@@ -128,7 +128,7 @@ function calcYearly(planFee) {
 };
 
 function formatCHF(selectPlan) {
-    return (new Intl.NumberFormat('de-DE', {
+    return (new Intl.NumberFormat('de-CH', {
         style: 'currency',
         currency: 'CHF',
         minimumFractionDigits: 0,
