@@ -69,6 +69,24 @@ var tQ = document.getElementById("ticket-quantity"),
         monthYear: 229,
         onlineFee: 0.015,
         offlineFee: 0
+    },
+    eFeesGBP = {
+        monthMonth: 1,
+        monthYear: 1,
+        onlineFee: 1.0,
+        offlineFee: 1.0
+    },
+    pFeesGBP = {
+        monthMonth: 1,
+        monthYear: 1,
+        onlineFee: 1.0,
+        offlineFee: 1.0
+    },
+    aFeesGBP = {
+        monthMonth: 1,
+        monthYear: 1,
+        onlineFee: 1.0,
+        offlineFee: 1
     };
 
 $(".calcinput").change(simulator),
@@ -79,6 +97,9 @@ $(".calcinput").change(simulator),
         setTimeout(simulator, 500);
     }),
     $(".eurspan").click(function () {
+        setTimeout(simulator, 500);
+    }),
+    $(".gbpspan").click(function () {
         setTimeout(simulator, 500);
     }),
     (feeCheckBox.onchange = simulator),
@@ -101,6 +122,13 @@ function firstCalc() {
             plan.explorerY = calcYearly(eFeesUSD),
             plan.pilotY = calcYearly(pFeesUSD),
             plan.astronautY = calcYearly(aFeesUSD);
+    } else if ($(".gbp").is(":visible")) {
+        plan.explorerM = calcMonthly(eFeesGBP),
+            plan.pilotM = calcMonthly(pFeesGBP),
+            plan.astronautM = calcMonthly(aFeesGBP),
+            plan.explorerY = calcYearly(eFeesGBP),
+            plan.pilotY = calcYearly(pFeesGBP),
+            plan.astronautY = calcYearly(aFeesGBP);
     } else {
         plan.explorerM = calcMonthly(eFeesEur),
             plan.pilotM = calcMonthly(pFeesEur),
@@ -154,6 +182,15 @@ function formatEUR(selectPlan) {
     }).format(selectPlan));
 };
 
+function formatGBP(selectPlan) {
+    return (new Intl.NumberFormat('en-EN', {
+        style: 'currency',
+        currency: 'GBP',
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+    }).format(selectPlan));
+};
+
 function formatPrecents(selectPlan) {
     return (new Intl.NumberFormat('en-EN', {
         style: 'percent',
@@ -194,6 +231,19 @@ function simulator() {
             (explorer[4].innerHTML = formatUSD(plan.explorerY * 12)),
             (pilot[4].innerHTML = formatUSD(plan.pilotY * 12)),
             (astronaut[4].innerHTML = formatUSD(plan.astronautY * 12))) :
+        $(".gbp").is(":visible") ?
+        ((explorer[0].innerText = formatGBP(plan.explorerM)),
+            (pilot[0].innerText = formatGBP(plan.pilotM)),
+            (astronaut[0].innerText = formatGBP(plan.astronautM)),
+            (explorer[3].innerText = formatGBP(plan.explorerY)),
+            (pilot[3].innerText = formatGBP(plan.pilotY)),
+            (astronaut[3].innerText = formatGBP(plan.astronautY)),
+            (explorer[1].innerHTML = formatGBP(plan.explorerM * monthAmount.value)),
+            (pilot[1].innerHTML = formatGBP(plan.pilotM * monthAmount.value)),
+            (astronaut[1].innerHTML = formatGBP(plan.astronautM * monthAmount.value)),
+            (explorer[4].innerHTML = formatGBP(plan.explorerY * 12)),
+            (pilot[4].innerHTML = formatGBP(plan.pilotY * 12)),
+            (astronaut[4].innerHTML = formatGBP(plan.astronautY * 12))) :
         $(".eur").is(":visible") &&
         ((explorer[0].innerText = formatEUR(plan.explorerM)),
             (pilot[0].innerText = formatEUR(plan.pilotM)),
