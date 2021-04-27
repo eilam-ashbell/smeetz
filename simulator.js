@@ -71,22 +71,22 @@ var tQ = document.getElementById("ticket-quantity"),
         offlineFee: 0
     },
     eFeesGBP = {
-        monthMonth: 1,
-        monthYear: 1,
-        onlineFee: 1.0,
-        offlineFee: 1.0
+        monthMonth: 39,
+        monthYear: 31,
+        onlineFee: 0.035,
+        offlineFee: 0.31
     },
     pFeesGBP = {
-        monthMonth: 1,
-        monthYear: 1,
-        onlineFee: 1.0,
-        offlineFee: 1.0
+        monthMonth: 102,
+        monthYear: 79,
+        onlineFee: 0.025,
+        offlineFee: 0.15
     },
     aFeesGBP = {
-        monthMonth: 1,
-        monthYear: 1,
-        onlineFee: 1.0,
-        offlineFee: 1
+        monthMonth: 259,
+        monthYear: 197,
+        onlineFee: 0.015,
+        offlineFee: 0
     };
 
 $(".calcinput").change(simulator),
