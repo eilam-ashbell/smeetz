@@ -31,7 +31,7 @@ var tQ = document.getElementById("ticket-quantity"),
     },
     aFees = {
         monthMonth: 329,
-        monthYear: 249,
+        monthYear: 249,v
         onlineFee: 0.015,
         offlineFee: 0,
 
