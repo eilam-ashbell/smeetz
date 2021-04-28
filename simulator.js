@@ -163,7 +163,7 @@ function calcYearly(planFee) {
 function formatCHF(selectPlan) {
     return (new Intl.NumberFormat('de-CH', {
         style: 'currency',
-        currency: 'CHF',
+        currency: 'CHF', 
         minimumFractionDigits: 0,
         maximumFractionDigits: 0
     }).format(selectPlan));
