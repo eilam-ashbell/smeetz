@@ -142,7 +142,7 @@ function firstCalc() {
             plan.pilotY = calcYearly(pFeesEur),
             plan.astronautY = calcYearly(aFeesEur);
     }
-    if (false == feeCheckBox.checked) {
+    if (true == feeCheckBox.checked) {
         plan.explorerM = (plan.explorerM + a),
             plan.pilotM = (plan.pilotM + a),
             plan.astronautM = (plan.astronautM + a),
