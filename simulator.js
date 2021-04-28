@@ -20,19 +20,24 @@ var tQ = document.getElementById("ticket-quantity"),
         monthMonth: 49,
         monthYear: 39,
         onlineFee: 0.035,
-        offlineFee: 0.39
+        offlineFee: 0.39,
+        payFee: 0.027
     },
     pFees = {
         monthMonth: 129,
         monthYear: 99,
         onlineFee: 0.025,
-        offlineFee: 0.19
+        offlineFee: 0.19,
+        payFee: 0.027
+
     },
     aFees = {
         monthMonth: 329,
         monthYear: 249,
         onlineFee: 0.015,
-        offlineFee: 0
+        offlineFee: 0,
+        payFee: 0.027
+
     },
     eFeesUSD = {
         monthMonth: 53,
