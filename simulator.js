@@ -141,7 +141,7 @@ function firstCalc() {
             plan.explorerY = calcYearly(eFeesEur),
             plan.pilotY = calcYearly(pFeesEur),
             plan.astronautY = calcYearly(aFeesEur);
-    }
+    };
     if (feeCheckBox.checked == true) {
         plan.explorerM = (plan.explorerM + a),
             plan.pilotM = (plan.pilotM + a),
@@ -149,7 +149,7 @@ function firstCalc() {
             plan.explorerY = (plan.explorerY + a),
             plan.pilotY = (plan.pilotY + a),
             plan.astronautY = (plan.astronautY + a);
-    } else {}
+    };
 };
 
 function calcMonthly(planFee) {
