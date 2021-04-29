@@ -143,9 +143,9 @@ function firstCalc() {
         plan.explorerM = (plan.explorerM + a),
             plan.pilotM = (plan.pilotM + a),
             plan.astronautM = (plan.astronautM + a),
-            plan.explorerY = (plan.explorerY + a),
-            plan.pilotY = (plan.pilotY + a),
-            plan.astronautY = (plan.astronautY + a);
+            plan.explorerY = (((plan.explorerY*12) + a*monthAmount.value)/12),
+            plan.pilotY = (((plan.pilotY*12) + a*monthAmount.value)/12),
+            plan.astronautY = (((plan.astronautY*12) + a*monthAmount.value)/12);
     };
 };
 
@@ -154,7 +154,7 @@ function calcMonthly(planFee) {
 };
 
 function calcYearly(planFee) {
-    return (tFeesCalc * planFee.onlineFee + tQ.value * t * planFee.offlineFee + planFee.monthYear);
+    return (((tFeesCalc*eFees.onlineFee*monthAmount.value)+(tQ.value*t*eFees.offlineFee*monthAmount.value)+(eFees.monthYear*12)+(tFeesCalc*0.027*monthAmount.value))/12);
 };
 
 function formatCHF(selectPlan) {
