@@ -154,7 +154,7 @@ function calcMonthly(planFee) {
 };
 
 function calcYearly(planFee) {
-    return (((tFeesCalc*eFees.onlineFee*monthAmount.value)+(tQ.value*t*eFees.offlineFee*monthAmount.value)+(eFees.monthYear*12)+(tFeesCalc*0.027*monthAmount.value))/12);
+    return (((tFeesCalc*planFee.onlineFee*monthAmount.value)+(tQ.value*t*planFee.offlineFee*monthAmount.value)+(planFee.monthYear*12)+(tFeesCalc*0.027*monthAmount.value))/12);
 };
 
 function formatCHF(selectPlan) {
